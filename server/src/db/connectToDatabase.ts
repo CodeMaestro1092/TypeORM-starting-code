@@ -1,4 +1,4 @@
-import { AppDataSource } from "../data-sourse";
+import { AppDataSource } from "../data-source";
 
 const connectToDatabase = async (app: any, PORT: number): Promise<void> => {
   await AppDataSource.initialize()
