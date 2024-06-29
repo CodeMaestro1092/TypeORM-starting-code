@@ -11,23 +11,23 @@ import { RefreshToken } from "./refreshToken";
 @Entity("users")
 export class User {
   @PrimaryGeneratedColumn("uuid")
-  id!: string;
+  id: string;
 
   @Column({ nullable: false })
-  name!: string;
+  name: string;
 
   @Column({ nullable: false, unique: true })
-  email!: string;
+  email: string;
 
   @Column({ nullable: false })
-  password!: string;
+  password: string;
 
   @OneToMany(() => RefreshToken, (refreshToken) => refreshToken.user)
-  refreshTokens!: RefreshToken[];
+  refreshTokens: RefreshToken[];
 
   @CreateDateColumn()
-  createdAt!: Date;
+  createdAt?: Date;
 
   @UpdateDateColumn()
-  updatedAt!: Date;
+  updatedAt?: Date;
 }
